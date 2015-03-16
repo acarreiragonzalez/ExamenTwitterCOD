@@ -17,7 +17,9 @@ public class MetodosTwitter {
 
     Twitter twitter;
 
-  
+    /**
+     *
+     */
     public MetodosTwitter() {
 
   ConfigurationBuilder cb = new ConfigurationBuilder();
@@ -32,7 +34,12 @@ Twitter twitter = tf.getInstance();
     }
 
 //Método que nos muestra la línea de tiempo
-    public void lineaTiempo() throws TwitterException {
+
+    /**
+     *
+     * @throws TwitterException
+     */
+        public void lineaTiempo() throws TwitterException {
 
         List<Status> statuses = twitter.getHomeTimeline();
         System.out.println("Mostrando línea de tiempo");
@@ -44,7 +51,13 @@ Twitter twitter = tf.getInstance();
     }
 
 //Método que nos busca un tweet  
-    public void buscarString(String busqueda) throws TwitterException {
+
+    /**
+     *
+     * @param busqueda
+     * @throws TwitterException
+     */
+        public void buscarString(String busqueda) throws TwitterException {
 
         Query query = new Query(busqueda);
         QueryResult result = twitter.search(query);
@@ -55,7 +68,13 @@ Twitter twitter = tf.getInstance();
     }
 
  //Método que nos pide un String y lo tweetea
-    public void tweetear(String tweet) throws TwitterException {
+
+    /**
+     *
+     * @param tweet
+     * @throws TwitterException
+     */
+        public void tweetear(String tweet) throws TwitterException {
 
         Status status = twitter.updateStatus(tweet);
         System.out.println("Successfully updated the status to [" + status.getText() + "].");
